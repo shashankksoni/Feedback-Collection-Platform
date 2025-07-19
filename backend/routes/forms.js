@@ -12,7 +12,7 @@ router.post('/', auth, async (req, res) => {
   }
 
   try {
-    const publicId = nanoid(10); // generate unique public id for URL
+    const publicId = nanoid(10); 
     const form = new Form({
       title,
       questions,
@@ -27,7 +27,7 @@ router.post('/', auth, async (req, res) => {
   }
 });
 
-// Get form by publicId (public access)
+
 router.get('/:publicId', async (req, res) => {
   try {
     const form = await Form.findOne({ publicId: req.params.publicId });
@@ -39,7 +39,7 @@ router.get('/:publicId', async (req, res) => {
   }
 });
 
-// Get all forms by admin user
+
 router.get('/', auth, async (req, res) => {
   try {
     const forms = await Form.find({ createdBy: req.user.id });
