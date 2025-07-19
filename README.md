@@ -307,7 +307,7 @@ feedback-collection-platform/
 
 ## 👤 Author
 
-Your Name — \[[shashankksoni](https://github.com/shashankksoni)]
+Your Name — \[shashankksoni](https://github.com/shashankksoni)
 
 ---
 
