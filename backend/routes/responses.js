@@ -5,7 +5,7 @@ const Form = require('../models/Form');
 const auth = require('../middleware/auth');
 const { Parser } = require('json2csv');
 
-// Submit feedback (public)
+
 router.post('/:publicId', async (req, res) => {
   const { answers } = req.body;
 
@@ -13,7 +13,7 @@ router.post('/:publicId', async (req, res) => {
     const form = await Form.findOne({ publicId: req.params.publicId });
     if (!form) return res.status(404).json({ message: 'Form not found' });
 
-    // Basic validation of answers length
+    
     if (!answers || !Array.isArray(answers) || answers.length !== form.questions.length) {
       return res.status(400).json({ message: 'Invalid answers' });
     }
@@ -33,7 +33,7 @@ router.post('/:publicId', async (req, res) => {
 // Get responses for a form (admin only)
 router.get('/:formId', auth, async (req, res) => {
   try {
-    // Confirm that the form belongs to the user
+    
     const form = await Form.findOne({ _id: req.params.formId, createdBy: req.user.id });
     if (!form) return res.status(404).json({ message: 'Form not found or unauthorized' });
 
@@ -74,10 +74,10 @@ router.get('/export/:formId', auth, async (req, res) => {
   }
 });
 
-// --- NEW: Summary stats for a form's responses (admin only) ---
+
 router.get('/summary/:formId', auth, async (req, res) => {
   try {
-    // Confirm form belongs to user
+ 
     const form = await Form.findOne({ _id: req.params.formId, createdBy: req.user.id });
     if (!form) return res.status(404).json({ message: 'Form not found or unauthorized' });
 
@@ -85,7 +85,7 @@ router.get('/summary/:formId', auth, async (req, res) => {
 
     const summary = form.questions.map(q => {
       if (q.questionType === 'multiple-choice') {
-        // Tally how many times each option was chosen
+       
         const counts = {};
         (q.options || []).forEach(opt => { counts[opt] = 0; });
 
@@ -102,7 +102,7 @@ router.get('/summary/:formId', auth, async (req, res) => {
           summary: counts
         };
       } else {
-        // For text answers, collect all answers as a list
+       
         const answers = responses.map(resp => {
           const ans = resp.answers.find(a => a.questionId.toString() === q._id.toString());
           return ans ? ans.answerText : null;
