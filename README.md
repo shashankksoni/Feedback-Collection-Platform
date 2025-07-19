@@ -148,19 +148,65 @@ Visit [http://localhost:5173](http://localhost:5173) in your browser.
 * Add pagination for responses if needed for large scale
 * Unit tests and e2e tests can be added for robustness
 
+
 ---
 
-## ☁️ How to Deploy
+## 📋 Project Structure
 
-* You can deploy backend on **Render**, **Vercel**, or **Heroku**
-* Frontend can be deployed to **Vercel**, **Netlify**, or **GitHub Pages**
-* Use **MongoDB Atlas** for a managed database
+```
+feedback-collection-platform/
+├── backend/
+│   ├── middleware/
+│   │   └── auth.js
+│   ├── models/
+│   │   ├── Form.js
+│   │   ├── Response.js
+│   │   └── User.js
+│   ├── routes/
+│   │   ├── auth.js
+│   │   ├── forms.js
+│   │   └── responses.js
+│   ├── .env
+│   ├── package-lock.json
+│   ├── package.json
+│   └── server.js
+│
+├── frontend/
+│   ├── public/
+│   │   └── vite.svg
+│   ├── src/
+│   │   ├── assets/
+│   │   │   └── react.svg
+│   │   ├── components/
+│   │   │   ├── Navbar.jsx
+│   │   │   └── PrivateRoute.jsx
+│   │   ├── pages/
+│   │   │   ├── AdminDashboard.jsx
+│   │   │   ├── AdminLogin.jsx
+│   │   │   ├── AdminRegister.jsx
+│   │   │   ├── CreateForm.jsx
+│   │   │   ├── PublicForm.jsx
+│   │   │   └── ViewResponses.jsx
+│   │   ├── App.css
+│   │   ├── App.jsx
+│   │   ├── index.css
+│   │   ├── main.jsx
+│   ├── .gitignore
+│   ├── eslint.config.js
+│   ├── index.html
+│   ├── package-lock.json
+│   ├── package.json
+│   └── vite.config.js
+│
+└── README.md
+```
+
 
 ---
 
 ## 👤 Author
 
-Your Name — \[your github profile]
+Your Name — \[shashankksoni]
 
 ---
 
