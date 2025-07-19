@@ -79,9 +79,6 @@ Visit [http://localhost:5173](http://localhost:5173) in your browser.
 
 ---
 
-Here's how you can convert that into a well-formatted `README.md` section for a project that uses MongoDB:
-
----
 
 ## 🔑 How to Get a MongoDB URI
 
@@ -123,9 +120,6 @@ Follow these steps to obtain a MongoDB URI for your application:
 
 ---
 
-Here's the `README.md` section for **🔒 How to Get a JWT Secret Key**, formatted consistently with the previous MongoDB URI instructions:
-
----
 
 ## 🔒 How to Get a JWT Secret Key
 
@@ -152,12 +146,6 @@ Follow these steps to generate a secure JWT secret for your application:
    ```
 
    Replace `your_super_long_random_string` with the actual value you generated.
-
----
-
-Got it! Since you **didn't use an exported Postman collection**, but instead **tested the backend manually using Postman**, we can revise the section accordingly to reflect your actual workflow.
-
-Here’s the corrected and more accurate section you can add to your `README.md`:
 
 ---
 
@@ -319,7 +307,7 @@ feedback-collection-platform/
 
 ## 👤 Author
 
-Your Name — \[shashankksoni]
+Your Name — \[[shashankksoni](https://github.com/shashankksoni)]
 
 ---
 
