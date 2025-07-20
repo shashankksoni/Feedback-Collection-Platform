@@ -188,10 +188,6 @@ Postman was used manually to test and verify all backend API endpoints during de
 
 ---
 
-Certainly! Here’s a section you can **add to your README.md** explaining **how JWT authentication works in your project**.
-This is already written in clear markdown for your GitHub README:
-
----
 
 ## 🔒 How JWT Authentication Works in This Project
 
