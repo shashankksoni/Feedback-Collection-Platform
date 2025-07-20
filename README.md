@@ -188,6 +188,58 @@ Postman was used manually to test and verify all backend API endpoints during de
 
 ---
 
+Certainly! Here’s a section you can **add to your README.md** explaining **how JWT authentication works in your project**.
+This is already written in clear markdown for your GitHub README:
+
+---
+
+## 🔒 How JWT Authentication Works in This Project
+
+### 1. **Registration and Login**
+
+* When an admin **registers or logs in** (`/api/auth/register` or `/api/auth/login`), the backend checks credentials and **generates a JWT token** if successful.
+* This token encodes the admin's user ID and is signed using your secret key (`JWT_SECRET`).
+
+### 2. **Token Storage**
+
+* The frontend **stores the JWT token in `localStorage`** right after login or registration.
+
+### 3. **Protected API Requests**
+
+* For any admin-only API (such as creating forms, viewing responses, downloading CSV), the frontend **sends the JWT in the `x-auth-token` header** of each request.
+* The backend uses authentication middleware to:
+
+  * Check if a token is present
+  * Verify that the token is valid and not expired
+  * Allow or deny the request based on token validity
+
+### 4. **Logout**
+
+* Logging out is handled by **removing the JWT token from localStorage**.
+  This prevents further access to protected routes until the user logs in again.
+
+---
+
+### **Where JWT Is Used**
+
+* **Backend:**
+
+  * `/routes/auth.js`: Generates tokens during login and registration
+  * `/middleware/auth.js`: Verifies tokens for all protected admin routes
+  * All admin-only routes require this authentication middleware
+* **Frontend:**
+
+  * Saves token after successful login/registration
+  * Attaches token to protected API requests
+  * Uses `PrivateRoute` to block dashboard access if no token
+
+---
+
+**Public forms and feedback submission do NOT require a JWT.**
+Only admin actions are protected, keeping the system secure and user-friendly.
+
+---
+
 
 ## 🗂️ API Overview
 
