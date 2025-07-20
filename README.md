@@ -325,8 +325,7 @@ feedback-collection-platform/
 │   │   ├── assets/
 │   │   │   └── react.svg
 │   │   ├── components/
-│   │   │   ├── Navbar.jsx
-│   │   │   └── PrivateRoute.jsx
+│   │   │   └── PrivateRoute.jsx  
 │   │   ├── pages/
 │   │   │   ├── AdminDashboard.jsx
 │   │   │   ├── AdminLogin.jsx
